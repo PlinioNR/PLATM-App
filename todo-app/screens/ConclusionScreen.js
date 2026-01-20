@@ -6,7 +6,6 @@ const ConclusionScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>4. Conclusão</Text>
         
         <Text style={styles.paragraph}>
           A análise realizada demonstra que não existe uma "solução única" no desenvolvimento móvel. A escolha da arquitetura deve ser guiada pelo contexto do projeto, orçamento e requisitos de desempenho.

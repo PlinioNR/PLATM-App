@@ -1,16 +1,15 @@
 import React from 'react';
 import { ScrollView, View, Text, StyleSheet, StatusBar } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient'; // Importação nova
+import { LinearGradient } from 'expo-linear-gradient';
 
 const IntroScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      {/* Configura os ícones do sistema (bateria, wifi) para branco */}
       <StatusBar barStyle="light-content" backgroundColor="#1A237E" />
       
       <LinearGradient
-        colors={['#1A237E', '#283593', '#3949AB']} // Tons de azul em gradiente
+        colors={['#1A237E', '#283593', '#3949AB']}
         style={styles.header}
       >
         <MaterialCommunityIcons name="cellphone-link" size={60} color="#fff" />
@@ -19,23 +18,45 @@ const IntroScreen = () => {
       </LinearGradient>
 
       <View style={styles.content}>
-        {/* ... resto do conteúdo igual ao anterior ... */}
+        <View style={styles.card}>
+          <Text style={styles.paragraph}>
+            Nas últimas décadas, assistimos a uma evolução sem precedentes no hardware e software dos dispositivos móveis. As aplicações tornaram-se o pilar central da transformação digital.
+          </Text>
+          <Text style={styles.paragraph}>
+            Este relatório investiga as diversas arquiteturas de desenvolvimento — de Nativas a PWAs — e como as decisões tecnológicas impactam o sucesso estratégico das empresas.
+          </Text>
+        </View>
+
+        <View style={styles.infoBox}>
+          <MaterialCommunityIcons name="lightbulb-on-outline" size={24} color="#1A237E" />
+          <Text style={styles.infoText}>
+            A escolha da arquitetura certa define o equilíbrio entre custo, performance e alcance de mercado.
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );
 };
+
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F5F7FA' },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#F5F7FA' 
+  },
   header: { 
-    backgroundColor: '#1A237E', 
-    padding: 40, 
+    paddingTop: 60, 
+    paddingBottom: 40, 
     alignItems: 'center', 
     borderBottomLeftRadius: 30, 
-    borderBottomRightRadius: 30 
+    borderBottomRightRadius: 30,
+    marginBottom: 10, 
+  },
+  content: { 
+    padding: 20,
+    paddingBottom: 40, 
   },
   headerTitle: { color: '#fff', fontSize: 24, fontWeight: 'bold', marginTop: 10 },
   headerSubtitle: { color: '#90CAF9', fontSize: 14 },
-  content: { padding: 20 },
   card: { 
     backgroundColor: '#fff', 
     padding: 20, 

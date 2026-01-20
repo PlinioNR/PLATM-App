@@ -6,7 +6,6 @@ const GoalsScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>2. Objetivos do Projeto</Text>
         
         <Text style={styles.paragraph}>
           O objetivo geral deste projeto é realizar uma investigação aprofundada sobre as diversas arquiteturas de desenvolvimento de aplicações móveis e as tecnologias subjacentes. Isto visa fornecer uma base de conhecimento para a tomada de decisões informadas no desenvolvimento de software móvel.

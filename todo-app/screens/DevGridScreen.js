@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const architectures = [
-  { id: '1', type: 'Nativas', icon: 'android-debug-bridge', color: '#1A237E' },
+  { id: '1', type: 'Nativas', icon: 'android', color: '#1A237E' }, // Ícone corrigido
   { id: '2', type: 'Híbridas Trad.', icon: 'layers-outline', color: '#1A237E' },
   { id: '3', type: 'Cross-Compiled', icon: 'infinity', color: '#1A237E' },
   { id: '4', type: 'Web Native', icon: 'web', color: '#1A237E' },
@@ -26,7 +26,6 @@ const DevGridScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>3. Desenvolvimento</Text>
       <Text style={styles.subtitle}>Selecione uma arquitetura para ver a análise técnica:</Text>
       <FlatList
         data={architectures}

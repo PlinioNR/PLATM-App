@@ -18,7 +18,17 @@ const Stack = createStackNavigator();
 // Stack para a aba de Desenvolvimento (permite ir da Grid para os Detalhes)
 function DevStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#1A237E', // Azul escuro consistente
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold', fontSize: 18 },
+      }}
+    >
       <Stack.Screen 
         name="DevGrid" 
         component={DevGridScreen} 
@@ -88,11 +98,11 @@ export default function App() {
             tabBarIcon: ({color}) => <MaterialCommunityIcons name="check-circle" color={color} size={26}/> 
           }}
         />
-        <Tab.Screen 
+    <Tab.Screen 
   name="Referências" 
   component={ReferencesScreen} 
   options={{ 
-    tabBarIcon: ({color}) => <MaterialCommunityIcons name="library-books" color={color} size={26}/> 
+    tabBarIcon: ({color}) => <MaterialCommunityIcons name="book-open-variant" color={color} size={26}/> 
   }}
 />
       </Tab.Navigator>
