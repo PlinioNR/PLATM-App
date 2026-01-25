@@ -2,10 +2,37 @@ import React, { useState } from 'react';
 import { ScrollView, View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+/**
+ * @component DetailsScreen
+ * @description Componente de visualização detalhada que apresenta estudos de caso específicos
+ * sobre arquiteturas móveis. Este ecrã é responsável por renderizar dinamicamente o conteúdo
+ * (análise técnica, vantagens, desvantagens e crítica) com base no tipo de arquitetura
+ * passado via parâmetros de navegação.
+ * * O componente implementa um padrão de design "Master-Detail", onde a informação é segregada
+ * visualmente em cartões para facilitar a leitura comparativa.
+ * * @param {object} route - Objeto de rota injetado pelo React Navigation.
+ * @param {object} route.params - Parâmetros passados para a rota.
+ * @param {string} [route.params.type='Nativas'] - A chave da arquitetura a ser exibida (ex: 'Nativas', 'PWA').
+ * @returns {React.JSX.Element} A interface completa do estudo de caso.
+ */
 const DetailsScreen = ({ route }) => {
+  // Determina o tipo de arquitetura a exibir, com fallback para 'Nativas' por segurança.
   const type = route?.params?.type || 'Nativas';
+  
+  /**
+   * @state imageError
+   * @type {[boolean, function]}
+   * @description Estado local para gestão de falhas no carregamento de imagens (logos).
+   * Se true, renderiza um ícone vetorial como fallback visual.
+   */
   const [imageError, setImageError] = useState(false);
 
+  /**
+   * @constant content
+   * @type {Object.<string, {case: string, tech: string, icon: string, logo: number, description: string, advantages: string[], disadvantages: string[], critique: string, isPositive: boolean}>}
+   * @description Base de conhecimento estática (Knowledge Base) que mapeia cada tipo de arquitetura
+   * aos seus respetivos dados analíticos. Simula uma estrutura de dados que viria de uma API ou CMS.
+   */
   const content = {
     'Nativas': {
       case: 'Spotify',
@@ -173,6 +200,13 @@ const DetailsScreen = ({ route }) => {
   );
 };
 
+/**
+ * @constant styles
+ * @type {StyleSheet}
+ * @description Definições de estilo utilizando Flexbox para garantir a consistência
+ * visual entre diferentes dimensões de ecrã. Define a tipografia, espaçamento e
+ * decoração visual (sombras, bordas) dos componentes informativos.
+ */
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F8F9FA' },
   hero: { backgroundColor: '#fff', paddingVertical: 40, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#E0E0E0' },

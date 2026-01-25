@@ -2,6 +2,13 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+/**
+ * @constant architectures
+ * @type {Array<{id: string, type: string, icon: string, color: string}>}
+ * @description Estrutura de dados estática que define a taxonomia das arquiteturas móveis analisadas.
+ * Serve como fonte de verdade (source of truth) para a geração dinâmica do menu de navegação,
+ * associando cada tipo de desenvolvimento ao seu identificador visual (ícone) e metadados.
+ */
 const architectures = [
   { id: '1', type: 'Nativas', icon: 'android', color: '#1A237E' }, // Ícone corrigido
   { id: '2', type: 'Híbridas Trad.', icon: 'layers-outline', color: '#1A237E' },
@@ -11,7 +18,26 @@ const architectures = [
   { id: '6', type: 'PWA', icon: 'lightning-bolt', color: '#1A237E' },
 ];
 
+/**
+ * @component DevGridScreen
+ * @description Ecrã de navegação principal (Dashboard) da aplicação.
+ * Este componente implementa um padrão de interface "Launchpad", apresentando as opções de estudo
+ * numa disposição em grelha (Grid Layout). O objetivo é oferecer um ponto de acesso centralizado
+ * e intuitivo para os diferentes módulos da investigação.
+ * * @param {object} props - Propriedades do componente.
+ * @param {object} props.navigation - Objeto de navegação injetado pelo React Navigation stack, 
+ * utilizado para transitar para o ecrã de detalhes ('Details').
+ * @returns {React.JSX.Element} A interface de seleção de arquiteturas.
+ */
 const DevGridScreen = ({ navigation }) => {
+  
+  /**
+   * @function renderItem
+   * @description Função de renderização para cada item da FlatList.
+   * Cria um componente tocável (TouchableOpacity) que encapsula o ícone e o rótulo da arquitetura.
+   * @param {object} listObj - Objeto passado pela FlatList.
+   * @param {object} listObj.item - O item de dados individual da array `architectures`.
+   */
   const renderItem = ({ item }) => (
     <TouchableOpacity 
       style={styles.gridItem} 
@@ -38,6 +64,13 @@ const DevGridScreen = ({ navigation }) => {
   );
 };
 
+/**
+ * @constant styles
+ * @type {StyleSheet}
+ * @description Folha de estilos que define o layout da grelha.
+ * Destaca-se o uso de `elevation` e `shadow` para criar profundidade visual (Material Design guidelines),
+ * sugerindo interatividade nos botões da grelha.
+ */
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F5F7FA', padding: 20 },
   title: { fontSize: 24, fontWeight: 'bold', color: '#1A237E', marginBottom: 5 },

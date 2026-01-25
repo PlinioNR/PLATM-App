@@ -2,6 +2,14 @@ import React from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+/**
+ * @component ConclusionScreen
+ * @description Componente de interface funcional que apresenta as conclusões finais de uma 
+ * investigação sobre arquiteturas de desenvolvimento móvel. O ecrã sintetiza as escolhas 
+ * tecnológicas baseadas em desempenho, custo e acessibilidade, utilizando uma abordagem 
+ * comparativa entre soluções Nativas, Híbridas e Web Apps.
+ * * @returns {React.JSX.Element} Renderiza uma ScrollView com o resumo executivo do projeto.
+ */
 const ConclusionScreen = () => {
   return (
     <ScrollView style={styles.container}>
@@ -48,6 +56,12 @@ const ConclusionScreen = () => {
   );
 };
 
+/**
+ * @constant styles
+ * @type {StyleSheet}
+ * @description Definições de estilo para o componente ConclusionScreen, utilizando o motor de 
+ * estilização nativo do React Native para garantir uma interface responsiva e legível.
+ */
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
   content: { padding: 20 },

@@ -3,6 +3,15 @@ import { ScrollView, View, Text, StyleSheet, StatusBar } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
+/**
+ * @component IntroScreen
+ * @description Ecrã de introdução e enquadramento teórico do relatório técnico.
+ * Este componente estabelece o contexto histórico sobre a evolução dos dispositivos móveis
+ * e apresenta a problemática central: a escolha estratégica entre diferentes arquiteturas de software.
+ * * Design: Utiliza um cabeçalho com gradiente linear e elementos visuais (cards e info-boxes)
+ * para garantir uma leitura fluida e profissional, condizente com um projeto académico de engenharia/TI.
+ * * @returns {React.JSX.Element} O ecrã de introdução com o resumo executivo inicial.
+ */
 const IntroScreen = () => {
   return (
     <ScrollView style={styles.container}>
@@ -38,6 +47,13 @@ const IntroScreen = () => {
   );
 };
 
+/**
+ * @constant styles
+ * @type {StyleSheet}
+ * @description Conjunto de estilos que implementam a identidade visual do relatório.
+ * Inclui configurações para o `LinearGradient`, sombras (elevation/shadow) para destacar 
+ * informações críticas e layouts responsivos baseados em Flexbox.
+ */
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 

@@ -2,6 +2,16 @@ import React from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+/**
+ * @component GoalsScreen
+ * @description Componente informativo que estabelece o âmbito e a direção do projeto de investigação.
+ * Este ecrã apresenta o Objetivo Geral e os Objetivos Específicos (Seção 2.1), servindo como
+ * referencial teórico para o utilizador compreender o propósito da análise comparativa entre
+ * as diferentes arquiteturas móveis.
+ * * Estruturalmente, utiliza uma lista vertical de itens com ícones semânticos para facilitar a
+ * leitura e retenção dos pontos-chave da investigação.
+ * * @returns {React.JSX.Element} A renderização dos objetivos do projeto.
+ */
 const GoalsScreen = () => {
   return (
     <ScrollView style={styles.container}>
@@ -49,6 +59,14 @@ const GoalsScreen = () => {
   );
 };
 
+/**
+ * @constant styles
+ * @type {StyleSheet}
+ * @description Definições de estilo para a apresentação textual dos objetivos.
+ * Utiliza um esquema de cores sóbrio (tons de azul e cinza) para manter o foco na legibilidade
+ * do conteúdo académico. Os blocos de objetivos (`goalItem`) possuem fundo destacado para
+ * criar hierarquia visual.
+ */
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
   content: { padding: 20 },
